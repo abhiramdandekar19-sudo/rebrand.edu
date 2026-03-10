@@ -1,0 +1,114 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --accent: rgb(240, 31, 90);
+    --font-main: 'Inter', sans-serif;
+  }
+  
+  .hero-section {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+    scrollbar-color:var(--accent)
+  }
+  
+  .hero-content {
+    z-index: 2;
+  }
+  
+  /* The "Window" for the text reveal */
+  .hero-line {
+    margin: 0;
+    padding: 0;
+    height: 120px; /* Match font-size */
+    overflow: hidden;
+    font-family: var(--font-main);
+    font-size: clamp(3rem, 10vw, 7.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+  }
+  
+  .hero-line span {
+    display: block;
+  }
+  
+  .hero-line.italic {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  
+  .hero-footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .hero-copy {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 400px;
+  }
+  
+  /* Button with Dot */
+  .hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-right: 10vw;
+  }
+  
+  .hero-cta:hover {
+    transform: scale(1.05);
+  }
+  
+  .cta-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+  }
+  
+  /* Background Gradients (Awwwards Style) */
+  .hero-visual {
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(233, 112, 6, 0.1) 0%, rgba(255,255,255,0) 70%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-line { height: 60px; font-size: 3.5rem; }
+    .hero-footer { flex-direction: column; align-items: flex-start; gap: 30px; }
+  }
+
+  .hero-img{
+    position: absolute;
+    object-fit: cover;
+    height: 90vh;
+    float: right;
+    justify-content: end;
+    right:10%
+  }
